@@ -1,0 +1,41 @@
+﻿@page
+@model pp2023.Web.Pages.Admin.Dishes.ListModel
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2 mb-5">
+	<div class="container">
+		<h1>Блюда</h1>
+	</div>
+</div>
+
+@if (Model.Dishes != null && Model.Dishes.Any())
+{
+			<div class="container">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody>
+				@foreach (var dish in Model.Dishes)
+				{
+									<tr>
+									<td>@dish.Id</td>
+									<td>@dish.Name</td>
+									<td><a href="/Admin/Dishes/Edit/@dish.Id">Просмотреть</a></td>
+									</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+}
+else
+{
+		<div class="container">
+			<p>База данных блюд пуста!</p>
+		</div>
+}

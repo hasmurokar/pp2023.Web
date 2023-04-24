@@ -1,0 +1,67 @@
+﻿@page "{id:Guid}"
+@model pp2023.Web.Pages.Admin.Dishes.EditModel
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2 mb-5">
+	<div class="container">
+		<h1>Редактировать блюдо</h1>
+	</div>
+</div>
+
+@if (Model.Dish != null)
+{
+			<div>
+		<div class="container">
+			<form method="post">
+
+					<div class="mb-3">
+			<label for="name" class="form-label">Id</label>
+			<input type="text" class="form-control" id="id" asp-for="Dish.Id" readonly>
+					 </div>
+
+				 <div class="mb-3">
+		<label for="name" class="form-label">Название</label>
+			<input type="text" class="form-control" id="name" asp-for="Dish.Name">
+				 </div>
+
+				 <div class="mb-3">
+		<label for="imageUrl" class="form-label">Ссылка на фото блюда</label>
+			<input type="text" class="form-control" id="imageUrl" asp-for="Dish.ImageUrl">
+				 </div>
+
+				 <div class="mb-3">
+		<label for="price" class="form-label">Цена</label>
+			<input type="text" class="form-control" id="price" asp-for="Dish.Price">
+				 </div>
+
+				 <div class="mb-3">
+		<label for="contents" class="form-label">Состав</label>
+			<textarea class="form-control" id="contents" asp-for="Dish.Contents"></textarea>
+				 </div>
+
+				 <div class="mb-3">
+		<label for="description" class="form-label">Описание</label>
+			<input type="text" class="form-control" id="description" asp-for="Dish.Description">
+				 </div>
+
+				 <div class="mb-3">
+		<label for="weight" class="form-label">Масса</label>
+			<input type="text" class="form-control" id="weight" asp-for="Dish.Weight">
+				 </div>
+
+				<div class="mb-3">
+					<button class="btn btn-primary" type="submit" asp-page-handler="Edit">Редактировать</button>
+					<button class="btn btn-danger" type="submit" asp-page-handler="Delete">Delete</button>
+				 </div>
+
+			</form>
+		</div>
+	</div>
+}
+else
+{
+		<div class="container">
+			<p>Блюдо не найдено!</p>
+		</div>
+}

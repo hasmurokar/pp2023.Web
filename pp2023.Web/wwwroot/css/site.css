@@ -1,0 +1,21 @@
+html {
+    font-size: 29px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 20px;
+        font-family: Caveat, serif;
+    }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #dcb2a2;
+    font-family: Caveat
+}
