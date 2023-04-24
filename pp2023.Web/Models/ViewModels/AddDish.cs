@@ -6,7 +6,7 @@
         public decimal Price { get; set; }
         public string Description { get; set; }
         public string Contents { get; set; }
-        public double Weight { get; set; }
+        public decimal Weight { get; set; }
         public string ImageUrl { get; set; }
     }
 }

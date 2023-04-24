@@ -1,9 +1,9 @@
 ﻿namespace pp2023.Web.Models.Domain
 {
-    public class Histories
+    public class History
     {
         public int Id { get; set; }
         public int OrderId { get; set; }
-        public List<Orders> Orders { get; set; } = new();
+        public Order Order { get; set; }
     }
 }

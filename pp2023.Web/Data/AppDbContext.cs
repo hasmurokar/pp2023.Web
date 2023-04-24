@@ -11,23 +11,15 @@ namespace pp2023.Web.Data
         }
 
         public DbSet<Dish> Dishes { get; set; }
-        public DbSet<Histories> Histories { get; set; }
-        public DbSet<Roles> Roles { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Users> Users { get; set; }
+        //public DbSet<History> Histories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<UserRole>()
-        //        .HasKey(bc => new { bc.UserId, bc.RoleId});
-        //    modelBuilder.Entity<UserRole>()
-        //        .HasOne(bc => bc.UserId)
-        //        .WithMany(b => b.UserRoles)
-        //        .HasForeignKey(bc => bc.UserId);
-        //    modelBuilder.Entity<UserRole>()
-        //        .HasOne(bc => bc.RoleId)
-        //        .WithMany(c => c.UserRoles)
-        //        .HasForeignKey(bc => bc.RoleId);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>().Property(u => u.Role).HasConversion<string>();
+        }
     }
 }
